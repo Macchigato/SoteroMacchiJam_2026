@@ -73,4 +73,20 @@ public class GameManager : MonoBehaviour
         pistasColetadas++;
         tmp.text = "Pistas Coletadas: " + pistasColetadas.ToString();
     }
+
+
+    public bool conversando = false;
+
+    public Behaviour movimentoPlayer;
+
+    public void SetConversando(bool estado)
+    {
+        conversando = estado;
+
+        if (movimentoPlayer != null)
+        {
+            movimentoPlayer.enabled = !conversando;
+        }
+    }
+
 }

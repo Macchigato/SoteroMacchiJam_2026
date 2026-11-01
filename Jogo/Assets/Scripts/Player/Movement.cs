@@ -4,9 +4,16 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-
-
     public static Movement Instance { get; private set; }
+
+    public float velocidade = 4.0f;
+
+    public Rigidbody2D rb;
+
+    private InputAction moveAction;
+
+    public GameManager gameManager;
+    public OSComida comidaMao = null;
 
     private void Awake()
     {
@@ -17,32 +24,22 @@ public class Movement : MonoBehaviour
         }
 
         Instance = this;
-
         DontDestroyOnLoad(gameObject);
     }
 
-    public float velocidade = 4.0f;
-
-    public Rigidbody2D rb;
-
-    InputAction moveAction;
-
-    public GameManager gameManager;
-    public OSComida comidaMao = null;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (gameManager.gameState == 0)
+        if (gameManager != null && gameManager.gameState == 0 && !gameManager.conversando)
         {
-            rb.linearVelocityX = moveAction.ReadValue<Vector2>().x * velocidade;
+            if (moveAction != null)
+            {
+                rb.linearVelocityX = moveAction.ReadValue<Vector2>().x * velocidade;
+            }
         }
         else
         {

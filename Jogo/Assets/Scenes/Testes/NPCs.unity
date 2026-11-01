@@ -266,6 +266,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1203539885}
     - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.469926
       objectReference: {fileID: 0}
@@ -305,21 +317,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701344532570734325, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_Size.x
+      value: 5.470617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701344532570734325, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_Size.y
+      value: 18.938372
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701344532570734325, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_Offset.x
+      value: -2.2353084
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701344532570734325, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08381914
+      objectReference: {fileID: 0}
     - target: {fileID: 2991266361986813086, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 8644438594391244037, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7130236653080095890, guid: 8e996cfa01601bc4f96007458dee5ad3, type: 3}
+    - target: {fileID: 8644438594391244037, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_Color.b
-      value: 0.14070843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8644438594391244037, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_Color.g
-      value: 0.9622642
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8644438594391244037, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_Color.r
-      value: 0.22451574
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -879,6 +915,8 @@ MonoBehaviour:
   pistaAtual: {fileID: 0}
   pistasColetadas: 0
   tmp: {fileID: 0}
+  conversando: 0
+  movimentoPlayer: {fileID: 0}
 --- !u!4 &1203539886
 Transform:
   m_ObjectHideFlags: 0
