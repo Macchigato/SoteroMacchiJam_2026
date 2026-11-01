@@ -27,12 +27,16 @@ public class IaNPC : MonoBehaviour
     private CapsuleCollider2D colisor;
     private bool podeInteragir;
 
+    private SpriteRenderer spriteRenderer;
+    float velocidadeFade = 0.5f;
+
 
     void Start()
     {
         colisor = GetComponent<CapsuleCollider2D>();
         colisor.enabled = false;
         cozinha = FindAnyObjectByType<Cozinha>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         ProcurarCadeira();
     }
@@ -80,6 +84,15 @@ public class IaNPC : MonoBehaviour
             {
                 cadeiraAlvo = status;
                 cadeiraAlvo.MudarOcupado();
+
+                transform.position = cadeiraAlvo.transform.position + (Vector3.up * 1.2f);
+
+                if (spriteRenderer != null)
+                {
+                    Color cor = spriteRenderer.color;
+                    cor.a = 0f;
+                    spriteRenderer.color = cor;
+                }
                 MudarEstado(Estado.Andando);
                 return;
             }
@@ -96,21 +109,24 @@ public class IaNPC : MonoBehaviour
     {
         if (cadeiraAlvo == null) return;
 
-        float distancia = Vector2.Distance(transform.position, cadeiraAlvo.transform.position);
+        Color corAtual = spriteRenderer.color;
 
-        if (distancia <= 0.6)
+        if (corAtual.a < 1f)
         {
-            transform.position = cadeiraAlvo.transform.position + (Vector3.up * 1.2f);
+            corAtual.a += velocidadeFade * Time.deltaTime;
+            spriteRenderer.color = corAtual;
+        }
+        else
+        {
+
+            corAtual.a = 1f;
+            spriteRenderer.color = corAtual;
+
             MudarEstado(Estado.Pedindo);
             colisor.enabled = true;
 
             UINPC.telaUI.SetActive(true);
             UINPC.esperaUI.SetActive(true);
-        }
-        else
-        {
-            Vector2 direcao = (cadeiraAlvo.transform.position - transform.position).normalized;
-            transform.Translate(direcao * velocidade * Time.deltaTime, Space.World);
         }
     }
 
@@ -163,7 +179,7 @@ public class IaNPC : MonoBehaviour
         }
         else
         {
-            transform.position = transform.position + (Vector3.down * 1.2f);
+            //transform.position = transform.position + (Vector3.down * 1.2f);
             cadeiraAlvo.ocupado = false;
             MudarEstado(Estado.Saindo);
         }
@@ -171,8 +187,16 @@ public class IaNPC : MonoBehaviour
 
     void Saindo()
     {
+        Color corAtual = spriteRenderer.color;
+        if (corAtual.a > 0f)
+        {
+            corAtual.a -= velocidadeFade * Time.deltaTime;
+            spriteRenderer.color = corAtual;
+        } else
+        {
+            Destroy(this.gameObject);
+        }
 
-        transform.Translate(Vector3.right * velocidade * Time.deltaTime, Space.World);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
