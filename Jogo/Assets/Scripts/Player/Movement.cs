@@ -5,6 +5,22 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
+
+    public static Movement Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     public float velocidade = 4.0f;
 
     public Rigidbody2D rb;
@@ -12,6 +28,7 @@ public class Movement : MonoBehaviour
     InputAction moveAction;
 
     public GameManager gameManager;
+    public OSComida comidaMao = null;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

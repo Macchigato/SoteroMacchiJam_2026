@@ -1,4 +1,6 @@
+using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Estado
 {
@@ -12,22 +14,25 @@ public enum Estado
 
 public class IaNPC : MonoBehaviour
 {
+    public OSComida comidaEscolhida;
     public float velocidade = 3f;
     public float tempoComendo = 2.5f;
-    public string comida;
     public UI_NPCManager UINPC;
+    public Cozinha cozinha;
 
     private Cadeira cadeiraAlvo;
     private Estado estadoAtual;
     private float timerComendo;
     private float timerDePaciencia;
     private CapsuleCollider2D colisor;
+    private bool podeInteragir;
 
 
     void Start()
     {
         colisor = GetComponent<CapsuleCollider2D>();
         colisor.enabled = false;
+        cozinha = FindAnyObjectByType<Cozinha>();
 
         ProcurarCadeira();
     }
@@ -41,6 +46,7 @@ public class IaNPC : MonoBehaviour
                 break;
 
             case Estado.Pedindo:
+                AnotarPedido();
                 break;
 
             case Estado.Esperando:
@@ -48,12 +54,14 @@ public class IaNPC : MonoBehaviour
                 break;
 
             case Estado.Comendo:
+                Comendo();
                 break;
 
             case Estado.Reclamando:
                 break;
 
             case Estado.Saindo:
+                Saindo();
                 break;
 
             default:
@@ -106,45 +114,80 @@ public class IaNPC : MonoBehaviour
         }
     }
 
+    void AnotarPedido()
+    {
+        if (podeInteragir && Input.GetKeyDown(KeyCode.E))
+        {
+            MudarEstado(Estado.Esperando);
+            UINPC.esperaUI.SetActive(false);
+            UINPC.pedidoUI.SetActive(true);
+            timerDePaciencia = 20f;
+
+            comidaEscolhida = CookManager.Instance.ComidaAleatoria();
+            RawImage image = UINPC.pedidoUI.GetComponent<RawImage>();
+            image.texture = comidaEscolhida.texture;
+
+            cozinha.PrepararComida(comidaEscolhida);
+        }
+    }
+
     void EsperadoComida()
     {
         if (timerDePaciencia > 0)
         {
             timerDePaciencia -= Time.deltaTime;
+
+            if (podeInteragir && Input.GetKeyDown(KeyCode.E))
+            {
+                if (Movement.Instance.comidaMao.nome == comidaEscolhida.nome)
+                {
+                    Movement.Instance.comidaMao = null;
+                    MudarEstado(Estado.Comendo);
+                    timerComendo = tempoComendo;
+                    UINPC.telaUI.SetActive(false);
+                }
+            }
         }
         else
         {
+            UINPC.telaUI.SetActive(false);
             MudarEstado(Estado.Saindo);
         }
+    }
+
+    void Comendo()
+    {
+        if (timerComendo > 0)
+        {
+            timerComendo -= Time.deltaTime;
+        }
+        else
+        {
+            transform.position = transform.position + (Vector3.down * 1.2f);
+            cadeiraAlvo.ocupado = false;
+            MudarEstado(Estado.Saindo);
+        }
+    }
+
+    void Saindo()
+    {
+
+        transform.Translate(Vector3.right * velocidade * Time.deltaTime, Space.World);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                switch (estadoAtual)
-                {
-                    case Estado.Pedindo:
-                        MudarEstado(Estado.Esperando);
-                        UINPC.esperaUI.SetActive(false);
-                        UINPC.pedidoUI.SetActive(true);
-                        timerDePaciencia = 20f;
-
-                        comida = "Lasanha";
-                        break;
-
-                    case Estado.Esperando:
-                        
-                        break;
-
-                    default:
-                        break;
-                }
-
-            }
+            podeInteragir = true;
         }
     }
 
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            podeInteragir = false;
+        }
+    }
 }
