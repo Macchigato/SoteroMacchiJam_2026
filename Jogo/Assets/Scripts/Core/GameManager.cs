@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     //public TextMeshProUGUI tmp;
 
     public GameObject glow;
+    public float tempo;
 
     void Start()
     {
@@ -43,9 +44,13 @@ public class GameManager : MonoBehaviour
                 glow.SetActive(true);
                 pistaDesenho.SetActive(true);
                 pistaDesenho.transform.localScale = new Vector3(Mathf.Sin(Time.time) * 2.0f, 2.0f, 1.0f);
+
+                if(tempo > 0) tempo -= Time.deltaTime;
+                else tempo = 0;
             }
 
-            if (jumpAction != null && jumpAction.WasPressedThisFrame())
+            
+            if (jumpAction != null && jumpAction.WasPressedThisFrame() && tempo == 0)
             {
                 if (pistaDesenho != null)
                 {

@@ -30,6 +30,7 @@ public class pista : MonoBehaviour
             gameManager.AtualizarPista();
             gameManager.ColetarPista();
             gameManager.gameState = 1;
+            gameManager.tempo = 1f;
             Destroy(gameObject);
             }
         }
