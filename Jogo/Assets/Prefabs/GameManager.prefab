@@ -54,8 +54,8 @@ MonoBehaviour:
   pistaDesenho: {fileID: 0}
   pistaAtual: {fileID: 0}
   pistasColetadas: 0
-  tmp: {fileID: 0}
   glow: {fileID: 0}
+  tempo: 0
   conversando: 0
   movimentoPlayer: {fileID: 0}
 --- !u!114 &1846598077809837126
@@ -71,8 +71,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oSComidas:
-  - {fileID: 11400000, guid: 27680dbc7dd50594ba5978b8f9a9c1d9, type: 2}
-  - {fileID: 11400000, guid: 8be7b3395670c3843a49471cfe3a3217, type: 2}
+  - {fileID: 11400000, guid: 1344b8f04f9531e43b07a5afbb711180, type: 2}
+  - {fileID: 11400000, guid: d44af376b0674974596f9b92ec776bcc, type: 2}
+  - {fileID: 11400000, guid: cf03cc363a8d7404182bd6f08862d99f, type: 2}
 --- !u!114 &5546614391169931421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,4 +147,4 @@ MonoBehaviour:
   duracaoDoDia: 10
   velocidadeTransicao: 0.1
   chegouNoite: 0
-  proximaCena: Main
+  proximaCena: Noite 1

@@ -2056,13 +2056,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 314946036}
     - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
-      propertyPath: proximaCena
-      value: Noite 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
       propertyPath: cenarioNoite
       value: 
       objectReference: {fileID: 1403338282}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: duracaoDoDia
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: velocidadeTransicao
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9118456891990424191, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
       propertyPath: m_Name
       value: GameManager
