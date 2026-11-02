@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2520044, y: 0.41607216, z: 0}
-  m_LocalScale: {x: 1, y: 2.02, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 7130236653080095890, guid: 8e996cfa01601bc4f96007458dee5ad3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,8 +151,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -2.2353084, y: -0.08381914}
+  m_Size: {x: 5.470617, y: 18.938372}
   m_Direction: 0
 --- !u!114 &1871127939836111984
 MonoBehaviour:
@@ -169,3 +169,4 @@ MonoBehaviour:
   velocidade: 4
   rb: {fileID: 4446027082924599043}
   gameManager: {fileID: 0}
+  comidaMao: {fileID: 0}

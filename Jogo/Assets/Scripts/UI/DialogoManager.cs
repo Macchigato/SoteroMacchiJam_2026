@@ -10,7 +10,9 @@ public class DialogoManager : MonoBehaviour
     public string[] falas;
 
     private int falaAtual = 0;
-    private bool dialogoAtivo = false;
+    public bool dialogoAtivo = false;
+    public int contador = 0;
+
 
     void Start()
     {
@@ -24,7 +26,7 @@ public class DialogoManager : MonoBehaviour
             return;
         }
 
-        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if ( Keyboard.current.anyKey.wasPressedThisFrame)
         {
             AvancarDialogo();
         }

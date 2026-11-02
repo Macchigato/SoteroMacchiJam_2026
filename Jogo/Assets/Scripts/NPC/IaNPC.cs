@@ -30,12 +30,15 @@ public class IaNPC : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     float velocidadeFade = 0.5f;
 
+    private DialogoManager dialogo;
+
 
     void Start()
     {
         colisor = GetComponent<CapsuleCollider2D>();
         colisor.enabled = false;
         cozinha = FindAnyObjectByType<Cozinha>();
+        dialogo = FindAnyObjectByType<DialogoManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         ProcurarCadeira();
@@ -62,6 +65,7 @@ public class IaNPC : MonoBehaviour
                 break;
 
             case Estado.Reclamando:
+                Reclamando();
                 break;
 
             case Estado.Saindo:
@@ -161,6 +165,7 @@ public class IaNPC : MonoBehaviour
                     MudarEstado(Estado.Comendo);
                     timerComendo = tempoComendo;
                     UINPC.telaUI.SetActive(false);
+                    UINPC.pedidoUI.SetActive(false);
                 }
             }
         }
@@ -179,9 +184,19 @@ public class IaNPC : MonoBehaviour
         }
         else
         {
-            //transform.position = transform.position + (Vector3.down * 1.2f);
-            cadeiraAlvo.ocupado = false;
-            MudarEstado(Estado.Saindo);
+            if (dialogo.contador < 1)
+            {
+                cadeiraAlvo.ocupado = false;
+                dialogo.contador++;
+                MudarEstado(Estado.Saindo);
+            }
+            else
+            {
+                dialogo.contador = 0;
+                UINPC.telaUI.SetActive(true);
+                UINPC.reclamacaoUI.SetActive(true);
+                MudarEstado(Estado.Reclamando);
+            }
         }
     }
 
@@ -192,11 +207,29 @@ public class IaNPC : MonoBehaviour
         {
             corAtual.a -= velocidadeFade * Time.deltaTime;
             spriteRenderer.color = corAtual;
-        } else
+        }
+        else
         {
             Destroy(this.gameObject);
         }
 
+    }
+
+    bool dialogExiste;
+    void Reclamando()
+    {
+        if (podeInteragir && Input.GetKeyDown(KeyCode.E))
+        {
+            dialogo.IniciarDialogo();
+            dialogExiste = true;
+        }
+        
+        if(!dialogExiste) return;
+        if (!dialogo.dialogoAtivo)
+        {
+            cadeiraAlvo.ocupado = false;
+            MudarEstado(Estado.Saindo);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
