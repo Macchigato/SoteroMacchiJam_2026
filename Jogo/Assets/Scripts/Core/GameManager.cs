@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public int pistasColetadas = 0;
 
-    public TextMeshProUGUI tmp;
+    //public TextMeshProUGUI tmp;
 
     public GameObject glow;
 
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         public void ColetarPista()
     {
         pistasColetadas++;
-        tmp.text = "Pistas Coletadas: " + pistasColetadas.ToString();
+       // tmp.text = "Pistas Coletadas: " + pistasColetadas.ToString();
     }
 
 

@@ -267,11 +267,11 @@ PrefabInstance:
       objectReference: {fileID: 1203539885}
     - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.07
+      value: 7.62
       objectReference: {fileID: 0}
     - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -541,7 +541,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: f2d4d8ba5342c954fb8fdf915bc1e557, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -568,6 +568,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1904045821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &512210421
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1663515344788376142, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_Name
+      value: pista
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.6567926
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.88887686
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989155594812397500, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 8307327349281316200, guid: 7e40678854550b74386fb74b2917e206, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e40678854550b74386fb74b2917e206, type: 3}
 --- !u!1 &516766465
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,153 +966,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1904045821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1203539884
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1203539886}
-  - component: {fileID: 1203539885}
-  - component: {fileID: 1203539887}
-  - component: {fileID: 1203539888}
-  - component: {fileID: 1203539889}
-  - component: {fileID: 1203539890}
-  - component: {fileID: 1203539891}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1203539885
+--- !u!114 &1203539885 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1403770414664445715, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+  m_PrefabInstance: {fileID: 3551726587078018679}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203539884}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 698605bcd07c4ddd3b4d9c01a8997bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 0
-  pistaObj: {fileID: 0}
-  pistaDesenho: {fileID: 0}
-  pistaAtual: {fileID: 0}
-  pistasColetadas: 0
-  tmp: {fileID: 0}
-  glow: {fileID: 0}
-  conversando: 0
-  movimentoPlayer: {fileID: 0}
---- !u!4 &1203539886
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203539884}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.43992326, y: -2.2540455, z: -0.032253336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1203539887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203539884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1deab2ba34a2c4787d984c49dc8d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oSComidas:
-  - {fileID: 11400000, guid: 27680dbc7dd50594ba5978b8f9a9c1d9, type: 2}
-  - {fileID: 11400000, guid: 8be7b3395670c3843a49471cfe3a3217, type: 2}
---- !u!114 &1203539888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203539884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e4dcb1a7ee45aa1da3c290326846488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1203539885}
-  canvasDialogo: {fileID: 1519562100}
-  textoDialogo: {fileID: 234306125}
-  falas:
-  - "Ola meu nome \xE9 paulo"
-  - Tem um dente na minha porta
-  dialogoAtivo: 0
-  contador: 0
---- !u!114 &1203539889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203539884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c083f0997f7880845a7f92674c1bc099, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listaDeComidas: []
-  comidaPrefab: {fileID: 5991246638726223851, guid: a0684585a95353d458edb977e61eb8ce, type: 3}
-  comidaCriada: {fileID: 0}
-  aparecerComida: {fileID: 221668990}
---- !u!114 &1203539890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203539884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cb87d6b773a0c4987ae69b4850bd18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clientePrefab: {fileID: 8543708598992714722, guid: 082b7ebb9b23be4428c28b53666dd2ad, type: 3}
-  animacoes:
-  - {fileID: 9100000, guid: 936eaabd6cf076948b0743ccbb3f3d9f, type: 2}
-  - {fileID: 9100000, guid: 1e09db3ed301b544286ee5b85300650f, type: 2}
-  - {fileID: 9100000, guid: f201ac9c57a875046a9a67286f971c35, type: 2}
-  diaNoite: {fileID: 0}
---- !u!114 &1203539891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203539884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a75d5103f481694ba7dbb5b784a645c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pessoasAtendidas: 0
-  pistasColetadas: 0
-  cenarioDia: {fileID: 314946036}
-  cenarioNoite: {fileID: 1403338282}
-  duracaoDoDia: 10
-  velocidadeTransicao: 0.1
-  chegouNoite: 0
-  proximaCena: Main
 --- !u!1 &1238121956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,7 +1272,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 6d0b4a3adf10f2449a2ceb6d0c12b6e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2069,6 +1991,87 @@ Transform:
   - {fileID: 863062046}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3551726587078018679
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.43992326
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.2540455
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.032253336
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972377923961815448, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546614391169931421, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: textoDialogo
+      value: 
+      objectReference: {fileID: 234306125}
+    - target: {fileID: 5546614391169931421, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: canvasDialogo
+      value: 
+      objectReference: {fileID: 1519562100}
+    - target: {fileID: 5873591087214605819, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: aparecerComida
+      value: 
+      objectReference: {fileID: 221668990}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: cenarioDia
+      value: 
+      objectReference: {fileID: 314946036}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: proximaCena
+      value: Noite 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: cenarioNoite
+      value: 
+      objectReference: {fileID: 1403338282}
+    - target: {fileID: 9118456891990424191, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2077,6 +2080,7 @@ SceneRoots:
   - {fileID: 1904045821}
   - {fileID: 934998311}
   - {fileID: 94339450}
-  - {fileID: 1203539886}
+  - {fileID: 3551726587078018679}
   - {fileID: 221668990}
   - {fileID: 1693410130}
+  - {fileID: 512210421}

@@ -14,7 +14,6 @@ public class CookManager : MonoBehaviour
 
         Instance = this;
 
-        DontDestroyOnLoad(gameObject);
     }
 
     public OSComida ComidaAleatoria()

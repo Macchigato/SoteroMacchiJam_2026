@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9118456891990424191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2972377923961815448}
+  - component: {fileID: 1403770414664445715}
+  - component: {fileID: 1846598077809837126}
+  - component: {fileID: 5546614391169931421}
+  - component: {fileID: 5873591087214605819}
+  - component: {fileID: 7343606893079724959}
+  - component: {fileID: 6959342926976516097}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2972377923961815448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118456891990424191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43992326, y: -2.2540455, z: -0.032253336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1403770414664445715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118456891990424191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698605bcd07c4ddd3b4d9c01a8997bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: 0
+  pistaObj: {fileID: 0}
+  pistaDesenho: {fileID: 0}
+  pistaAtual: {fileID: 0}
+  pistasColetadas: 0
+  tmp: {fileID: 0}
+  glow: {fileID: 0}
+  conversando: 0
+  movimentoPlayer: {fileID: 0}
+--- !u!114 &1846598077809837126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118456891990424191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1deab2ba34a2c4787d984c49dc8d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oSComidas:
+  - {fileID: 11400000, guid: 27680dbc7dd50594ba5978b8f9a9c1d9, type: 2}
+  - {fileID: 11400000, guid: 8be7b3395670c3843a49471cfe3a3217, type: 2}
+--- !u!114 &5546614391169931421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118456891990424191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4dcb1a7ee45aa1da3c290326846488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1403770414664445715}
+  canvasDialogo: {fileID: 0}
+  textoDialogo: {fileID: 0}
+  falas:
+  - "Ola meu nome \xE9 paulo"
+  - Tem um dente na minha porta
+  dialogoAtivo: 0
+  contador: 0
+--- !u!114 &5873591087214605819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118456891990424191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c083f0997f7880845a7f92674c1bc099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listaDeComidas: []
+  comidaPrefab: {fileID: 5991246638726223851, guid: a0684585a95353d458edb977e61eb8ce, type: 3}
+  comidaCriada: {fileID: 0}
+  aparecerComida: {fileID: 0}
+--- !u!114 &7343606893079724959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118456891990424191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cb87d6b773a0c4987ae69b4850bd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientePrefab: {fileID: 8543708598992714722, guid: 082b7ebb9b23be4428c28b53666dd2ad, type: 3}
+  animacoes:
+  - {fileID: 9100000, guid: 936eaabd6cf076948b0743ccbb3f3d9f, type: 2}
+  - {fileID: 9100000, guid: 1e09db3ed301b544286ee5b85300650f, type: 2}
+  - {fileID: 9100000, guid: f201ac9c57a875046a9a67286f971c35, type: 2}
+  diaNoite: {fileID: 0}
+--- !u!114 &6959342926976516097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118456891990424191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a75d5103f481694ba7dbb5b784a645c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pessoasAtendidas: 0
+  pistasColetadas: 0
+  cenarioDia: {fileID: 0}
+  cenarioNoite: {fileID: 0}
+  duracaoDoDia: 10
+  velocidadeTransicao: 0.1
+  chegouNoite: 0
+  proximaCena: Main
