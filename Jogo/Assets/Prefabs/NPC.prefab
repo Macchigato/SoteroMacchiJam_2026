@@ -503,6 +503,9 @@ MonoBehaviour:
   tempoComendo: 2.5
   UINPC: {fileID: 1021328318104135799}
   cozinha: {fileID: 0}
+  somPedido: {fileID: 8300000, guid: a9d44511d6f013c41b5ae95e1e25ca2b, type: 3}
+  somAgradecimento: {fileID: 8300000, guid: a4f831a35175d4442800e771e34b3c67, type: 3}
+  volume: 1
 --- !u!212 &5765382075866326400
 SpriteRenderer:
   m_ObjectHideFlags: 0

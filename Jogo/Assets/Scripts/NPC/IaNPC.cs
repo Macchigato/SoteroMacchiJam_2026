@@ -19,6 +19,10 @@ public class IaNPC : MonoBehaviour
     public float tempoComendo = 2.5f;
     public UI_NPCManager UINPC;
     public Cozinha cozinha;
+    public AudioClip somPedido;
+    public AudioClip somAgradecimento;
+    [Range (0f, 1f)] public float volume = 1f;
+    private AudioSource fonteAudio;
 
     private Cadeira cadeiraAlvo;
     private Estado estadoAtual;
@@ -40,6 +44,9 @@ public class IaNPC : MonoBehaviour
         cozinha = FindAnyObjectByType<Cozinha>();
         dialogo = FindAnyObjectByType<DialogoManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        fonteAudio = gameObject.AddComponent<AudioSource>();
+        fonteAudio.playOnAwake = false;
+        fonteAudio.spatialBlend = 0f;
 
         ProcurarCadeira();
     }
@@ -129,6 +136,8 @@ public class IaNPC : MonoBehaviour
             MudarEstado(Estado.Pedindo);
             colisor.enabled = true;
 
+            if (somPedido != null) fonteAudio.PlayOneShot(somPedido, volume);
+
             UINPC.telaUI.SetActive(true);
             UINPC.esperaUI.SetActive(true);
         }
@@ -163,6 +172,9 @@ public class IaNPC : MonoBehaviour
                 {
                     Movement.Instance.comidaMao = null;
                     MudarEstado(Estado.Comendo);
+
+                    if (somAgradecimento != null) fonteAudio.PlayOneShot(somAgradecimento, volume);
+
                     timerComendo = tempoComendo;
                     UINPC.telaUI.SetActive(false);
                     UINPC.pedidoUI.SetActive(false);
