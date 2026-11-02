@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI tmp;
 
+    public GameObject glow;
+
     void Start()
     {
         jumpAction = InputSystem.actions.FindAction("Jump");
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
             pistaRenderer = pistaDesenho.GetComponent<SpriteRenderer>();
             AtualizarPista();
             pistaDesenho.SetActive(false);
+            glow.SetActive(false);
         }
     }
 
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
         {
             if (pistaDesenho != null)
             {
+                glow.SetActive(true);
                 pistaDesenho.SetActive(true);
                 pistaDesenho.transform.localScale = new Vector3(Mathf.Sin(Time.time) * 2.0f, 2.0f, 1.0f);
             }
@@ -46,6 +50,7 @@ public class GameManager : MonoBehaviour
                 if (pistaDesenho != null)
                 {
                     pistaDesenho.SetActive(false);
+                    glow.SetActive(false);
                 }
 
                 gameState = 0;
