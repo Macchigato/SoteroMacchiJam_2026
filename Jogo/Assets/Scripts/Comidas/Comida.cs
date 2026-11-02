@@ -7,7 +7,7 @@ public class Comida : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
-    public float tamanhoDesejado = 1f;
+    public float tamanhoDesejado = 0.75f;
     void Update()
     {
         if (podeInteragir && Input.GetKeyDown(KeyCode.E))

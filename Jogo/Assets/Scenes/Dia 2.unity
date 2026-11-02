@@ -266,18 +266,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1203539885}
     - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1925926071151236985, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.62
       objectReference: {fileID: 0}
@@ -317,10 +305,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2701344532570734325, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.81
-      objectReference: {fileID: 0}
     - target: {fileID: 2991266361986813086, guid: 33da020c67fdfa943a166a66d060eb53, type: 3}
       propertyPath: m_Name
       value: Player
@@ -355,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 221668989}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.49, y: -0.88, z: -0.04634489}
+  m_LocalPosition: {x: 5.38, y: -1.19, z: -0.04634489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2075,6 +2059,14 @@ PrefabInstance:
       propertyPath: cenarioNoite
       value: 
       objectReference: {fileID: 1403338282}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: duracaoDoDia
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: velocidadeTransicao
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9118456891990424191, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
       propertyPath: m_Name
       value: GameManager
