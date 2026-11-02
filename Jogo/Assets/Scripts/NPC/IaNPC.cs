@@ -159,7 +159,7 @@ public class IaNPC : MonoBehaviour
 
             if (podeInteragir && Input.GetKeyDown(KeyCode.E))
             {
-                if (Movement.Instance.comidaMao.nome == comidaEscolhida.nome)
+                if (Movement.Instance.comidaMao.nome == comidaEscolhida.nome && Movement.Instance.comidaMao != null)
                 {
                     Movement.Instance.comidaMao = null;
                     MudarEstado(Estado.Comendo);
@@ -184,7 +184,7 @@ public class IaNPC : MonoBehaviour
         }
         else
         {
-            if (dialogo.contador < 1)
+            if (dialogo.contador < 4)
             {
                 cadeiraAlvo.ocupado = false;
                 dialogo.contador++;
