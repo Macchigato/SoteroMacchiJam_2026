@@ -21,7 +21,7 @@ public class IaNPC : MonoBehaviour
     public Cozinha cozinha;
     public AudioClip somPedido;
     public AudioClip somAgradecimento;
-    [Range (0f, 1f)] public float volume = 1f;
+    [Range(0f, 1f)] public float volume = 1f;
     private AudioSource fonteAudio;
 
     private Cadeira cadeiraAlvo;
@@ -183,6 +183,7 @@ public class IaNPC : MonoBehaviour
         }
         else
         {
+            cadeiraAlvo.ocupado = false;
             UINPC.telaUI.SetActive(false);
             MudarEstado(Estado.Saindo);
         }
@@ -196,18 +197,18 @@ public class IaNPC : MonoBehaviour
         }
         else
         {
-            if (dialogo.contador < 4)
-            {
-                cadeiraAlvo.ocupado = false;
-                dialogo.contador++;
-                MudarEstado(Estado.Saindo);
-            }
-            else
+            if (dialogo.contador >= 3 && dialogo.TemDialogoDisponivel())
             {
                 dialogo.contador = 0;
                 UINPC.telaUI.SetActive(true);
                 UINPC.reclamacaoUI.SetActive(true);
                 MudarEstado(Estado.Reclamando);
+            }
+            else
+            {
+                cadeiraAlvo.ocupado = false;
+                dialogo.contador++;
+                MudarEstado(Estado.Saindo);
             }
         }
     }
@@ -235,8 +236,8 @@ public class IaNPC : MonoBehaviour
             dialogo.IniciarDialogo();
             dialogExiste = true;
         }
-        
-        if(!dialogExiste) return;
+
+        if (!dialogExiste) return;
         if (!dialogo.dialogoAtivo)
         {
             cadeiraAlvo.ocupado = false;

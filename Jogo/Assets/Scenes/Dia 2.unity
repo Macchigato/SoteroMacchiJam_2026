@@ -2154,6 +2154,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 314946036}
     - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
+      propertyPath: proximaCena
+      value: Noite 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959342926976516097, guid: 5ea74759d363d244caaba1de1f3678d8, type: 3}
       propertyPath: cenarioNoite
       value: 
       objectReference: {fileID: 1403338282}

@@ -4,34 +4,23 @@ using UnityEngine.InputSystem;
 
 public class pista : MonoBehaviour
 {
-
-    public GameManager gameManager;
-
-    public Texture2D textura;
-
+    public Sprite spritePista;
     private bool podeColetarPista;
-
     private InputAction jumpAction;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (podeColetarPista)
         {
             if (jumpAction != null && jumpAction.WasPressedThisFrame())
             {
-            gameManager.pistaAtual = textura;
-            gameManager.AtualizarPista();
-            gameManager.ColetarPista();
-            gameManager.gameState = 1;
-            gameManager.tempo = 1f;
-            Destroy(gameObject);
+                ExibirPista.Instance.MostrarPista(spritePista);
+                GameManager.Instance.gameState = 1;
+                Destroy(gameObject);
             }
         }
     }

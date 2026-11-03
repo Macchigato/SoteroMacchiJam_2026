@@ -2,88 +2,53 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     // 0 = movimentando, 1 = animação da pista
     public int gameState = 0;
-
-    public pista pistaObj;
-    public GameObject pistaDesenho;
-    public Texture2D pistaAtual;
-
     private InputAction jumpAction;
-    private SpriteRenderer pistaRenderer;
-
     public int pistasColetadas = 0;
+    public GameObject corraUI;
 
-    //public TextMeshProUGUI tmp;
-
-    public GameObject glow;
-    public float tempo;
-
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         jumpAction = InputSystem.actions.FindAction("Jump");
-
-        if (pistaDesenho != null)
-        {
-            pistaRenderer = pistaDesenho.GetComponent<SpriteRenderer>();
-            AtualizarPista();
-            pistaDesenho.SetActive(false);
-            glow.SetActive(false);
-        }
+        if(corraUI != null) corraUI.SetActive(false);
     }
 
     void Update()
     {
         if (gameState == 1)
         {
-            if (pistaDesenho != null)
+            if (jumpAction != null && jumpAction.WasPressedThisFrame())
             {
-                glow.SetActive(true);
-                pistaDesenho.SetActive(true);
-                pistaDesenho.transform.localScale = new Vector3(Mathf.Sin(Time.time) * 2.0f, 2.0f, 1.0f);
-
-                if(tempo > 0) tempo -= Time.deltaTime;
-                else tempo = 0;
-            }
-
-            
-            if (jumpAction != null && jumpAction.WasPressedThisFrame() && tempo == 0)
-            {
-                if (pistaDesenho != null)
-                {
-                    pistaDesenho.SetActive(false);
-                    glow.SetActive(false);
-                }
-
                 gameState = 0;
             }
         }
     }
 
-    public void AtualizarPista()
-    {
-        if (pistaRenderer == null || pistaAtual == null)
-        {
-            return;
-        }
-
-        pistaRenderer.sprite = Sprite.Create(
-            pistaAtual,
-            new Rect(0, 0, pistaAtual.width, pistaAtual.height),
-            new Vector2(0.5f, 0.5f),
-            100f
-        );
-    }
-
-        public void ColetarPista()
+    public void ColetarPista()
     {
         pistasColetadas++;
-       // tmp.text = "Pistas Coletadas: " + pistasColetadas.ToString();
+        
+        if (pistasColetadas == 3)
+        {
+            if (SceneManager.GetActiveScene().name == "Noite 1")
+            {
+                SceneManager.LoadScene("Dia 2");
+            } else if (SceneManager.GetActiveScene().name == "Noite 2")
+            {
+                if(corraUI != null) corraUI.SetActive(true);
+            }
+        }
     }
-
 
     public bool conversando = false;
 
@@ -98,5 +63,6 @@ public class GameManager : MonoBehaviour
             movimentoPlayer.enabled = !conversando;
         }
     }
+
 
 }

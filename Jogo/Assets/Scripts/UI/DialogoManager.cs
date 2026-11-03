@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogoManager : MonoBehaviour
 {
     public GameManager gameManager;
     public GameObject canvasDialogo;
     public TMP_Text textoDialogo;
-    public string[] falas;
+    public Image image;
+    public DialogoOS[] falas;
 
     private int falaAtual = 0;
     public bool dialogoAtivo = false;
@@ -17,6 +19,7 @@ public class DialogoManager : MonoBehaviour
     void Start()
     {
         canvasDialogo.SetActive(false);
+        falaAtual = 0;
     }
 
     void Update()
@@ -26,9 +29,9 @@ public class DialogoManager : MonoBehaviour
             return;
         }
 
-        if ( Keyboard.current.anyKey.wasPressedThisFrame)
+        if (Keyboard.current.anyKey.wasPressedThisFrame)
         {
-            AvancarDialogo();
+            EncerrarDialogo();
         }
     }
 
@@ -39,38 +42,33 @@ public class DialogoManager : MonoBehaviour
             return;
         }
 
-        falaAtual = 0;
         dialogoAtivo = true;
 
         canvasDialogo.SetActive(true);
         gameManager.SetConversando(true);
 
-        AtualizarTexto();
-    }
-
-    private void AvancarDialogo()
-    {
+        textoDialogo.text = falas[falaAtual].texto;
+        image.sprite = falas[falaAtual].imagem;
         falaAtual++;
 
-        if (falaAtual >= falas.Length)
-        {
-            EncerrarDialogo();
-            return;
-        }
-
-        AtualizarTexto();
     }
 
-    private void AtualizarTexto()
+    public bool TemDialogoDisponivel()
     {
-        textoDialogo.text = falas[falaAtual];
+        if (falaAtual == falas.Length)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public void EncerrarDialogo()
     {
         dialogoAtivo = false;
         canvasDialogo.SetActive(false);
-
         gameManager.SetConversando(false);
     }
 }

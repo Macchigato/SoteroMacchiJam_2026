@@ -13,13 +13,16 @@ EditorBuildSettings:
     guid: 496a2c600603cbc48b4e4ccafbd63cb7
   - enabled: 1
     path: Assets/Scenes/Dia 2.unity
-    guid: 3cd91d3626272634b86693966e664e4c
+    guid: 5e9b9382bda25e74d9b8f4d6ff8248f9
   - enabled: 1
     path: Assets/Scenes/Noite 1.unity
     guid: 1ee69465976e802489c4bb1a238f0e2f
   - enabled: 1
     path: Assets/Scenes/Noite 2.unity
-    guid: 637feac5ca060ca41968489f674d0e03
+    guid: 24fcbe6101eda57419992a9400ab9a61
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: ef7c266efa522d3489833c653072a8ec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
