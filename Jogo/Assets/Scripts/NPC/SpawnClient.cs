@@ -1,10 +1,9 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class SpawnClient : MonoBehaviour
 {
     public GameObject clientePrefab;
-    public AnimatorController[] animacoes;
+    public RuntimeAnimatorController[] animacoes;
 
     public DiaNoite diaNoite;
     private bool Bloqueado;

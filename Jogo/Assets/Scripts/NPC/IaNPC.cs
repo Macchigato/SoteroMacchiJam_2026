@@ -197,7 +197,7 @@ public class IaNPC : MonoBehaviour
         }
         else
         {
-            if (dialogo.contador >= 1 && dialogo.TemDialogoDisponivel())
+            if (dialogo.contador >= 3 && dialogo.TemDialogoDisponivel())
             {
                 dialogo.contador = 0;
                 UINPC.telaUI.SetActive(true);
