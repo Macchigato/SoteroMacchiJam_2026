@@ -30,7 +30,7 @@ public class pista : MonoBehaviour
         podeColetarPista = true;
     }
 
-    void OTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         podeColetarPista = false;
     }

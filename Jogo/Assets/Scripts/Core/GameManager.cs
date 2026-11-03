@@ -1,5 +1,4 @@
-using System;
-using TMPro;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -13,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int pistasColetadas = 0;
     public GameObject corraUI;
 
+    public GameObject painelAlertaDia;
+
     void Awake()
     {
         Instance = this;
@@ -21,7 +22,16 @@ public class GameManager : MonoBehaviour
     {
         jumpAction = InputSystem.actions.FindAction("Jump");
         if(corraUI != null) corraUI.SetActive(false);
+        StartCoroutine(Introducao());
     }
+
+    IEnumerator Introducao()
+    {
+        if (painelAlertaDia != null) painelAlertaDia.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        painelAlertaDia.SetActive(false);
+    }
+
 
     void Update()
     {

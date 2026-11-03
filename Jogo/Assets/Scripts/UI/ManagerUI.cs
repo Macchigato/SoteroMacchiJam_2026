@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class ManagerUI : MonoBehaviour
 {
+    public GameObject creditos;
+
+    void Start()
+    {
+        creditos.SetActive(false);
+    }
     public void AbrirFecharTela(GameObject gameObject)
     {
         gameObject.SetActive(!gameObject.activeSelf);

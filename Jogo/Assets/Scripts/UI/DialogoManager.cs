@@ -51,6 +51,8 @@ public class DialogoManager : MonoBehaviour
         image.sprite = falas[falaAtual].imagem;
         falaAtual++;
 
+        Time.timeScale = 0;
+
     }
 
     public bool TemDialogoDisponivel()
@@ -70,5 +72,7 @@ public class DialogoManager : MonoBehaviour
         dialogoAtivo = false;
         canvasDialogo.SetActive(false);
         gameManager.SetConversando(false);
+
+        Time.timeScale = 1;
     }
 }

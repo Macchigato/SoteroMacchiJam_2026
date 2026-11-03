@@ -168,7 +168,7 @@ public class IaNPC : MonoBehaviour
 
             if (podeInteragir && Input.GetKeyDown(KeyCode.E))
             {
-                if (Movement.Instance.comidaMao.nome == comidaEscolhida.nome && Movement.Instance.comidaMao != null)
+                if (Movement.Instance.comidaMao != null && Movement.Instance.comidaMao.nome == comidaEscolhida.nome)
                 {
                     Movement.Instance.comidaMao = null;
                     MudarEstado(Estado.Comendo);
@@ -197,7 +197,7 @@ public class IaNPC : MonoBehaviour
         }
         else
         {
-            if (dialogo.contador >= 3 && dialogo.TemDialogoDisponivel())
+            if (dialogo.contador >= 1 && dialogo.TemDialogoDisponivel())
             {
                 dialogo.contador = 0;
                 UINPC.telaUI.SetActive(true);
@@ -238,6 +238,7 @@ public class IaNPC : MonoBehaviour
         }
 
         if (!dialogExiste) return;
+        colisor.enabled = false;
         if (!dialogo.dialogoAtivo)
         {
             cadeiraAlvo.ocupado = false;
